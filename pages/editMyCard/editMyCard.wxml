@@ -1,0 +1,51 @@
+<!--pages/editMyCard/editMyCard.wxml-->
+<view class='editMyCard-box'>
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view> 
+<view class="ad_popVoice" wx:if="{{popVoice}}">
+  <view class='btn_close' bindtap='btnClose'></view>
+  <view class='listenVoice' bindtap='gotoPlay' wx:if="{{popVoice2}}">试听录音</view>
+  <view class='finishVoice' bindtap='finishVoice' wx:if="{{popVoice2}}">完成录音</view>
+  <view class='recording' style="background:url(http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/yuyinlogo.png) no-repeat; background-size:100% 100%;"  bindtouchstart='recorderS' bindtouchend='recorderE'></view>
+</view> 
+  <view class='edit_title'>我的王者名片</view>
+  <view class='edit_intr'>
+    <view class='avatar'>
+      <image src="{{personIntr.avatar}}" class='avatar-img'></image>
+    </view>
+    <view type='text' class="edit_name">{{personIntr.name}}</view>
+    <view wx:if="{{personIntr.sex==1}}">
+      <image src='{{male}}' class='edit_sex'></image>
+    </view>
+    <view wx:if="{{personIntr.sex==2}}">
+      <image src='{{female}}' class='edit_sex'></image>
+    </view>
+  </view>
+  <input type='text' class="sele_edit" bindinput="textInput" placeholder='你的微信号' value='{{personIntr.wechat}}'></input>
+  <view class="sele_edit">
+    <picker bindchange="bindPickerChange1" value="{{index}}" range="{{level_array}}" range-key="name">
+      <view class="picker">
+        段位选择：{{level_array[index1].name}}
+      </view>
+    </picker>
+  </view>
+  <view class='sele_edit' bindtap='toRecord'>{{voice_info}}</view>
+  <navigator class='sele_edit' url="../heros/heros"><view wx:if="{{lovehero.name}}">{{lovehero.name}}</view><view wx:else>选择你的本命英雄</view></navigator>
+  <view class="sele_edit">
+    <picker bindchange="bindPickerChange2" value="{{index}}" range="{{position_array}}" range-key="name">
+      <view class="picker">
+        擅长位置：{{position_array[index2].name}}
+      </view>
+    </picker>
+  </view>
+  <view class='edit_bottom'>
+    <view class='edit_lab'>趣味标签：</view>
+    <input class='costom_lab' type="text" bindinput ="labInput" placeholder='自定义标签'>{{costom_lab}}</input>
+    <button class="btn_lab" bindtap="addLab">添加</button>
+  </view>
+  <view class='more_label'>
+    <block wx:for="{{heroLabel}}" wx:for-index="idx" wx:key="">
+      <view class="{{item.is_select?'t_hero_label':'f_hero_label'}}" data-what='{{idx}}' bindtap="select_lab">{{item.name}}</view>
+    </block>
+  </view>
+   <button class='toEdit' bindtap="toEdit">生成名片</button>
+</view>

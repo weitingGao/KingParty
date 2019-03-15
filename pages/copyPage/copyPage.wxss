@@ -1,0 +1,36 @@
+/* pages/copyPage/copyPage.wxss */
+.receive-title {
+  padding-top: 10rpx;
+  text-align: center;
+  color: #b4b4b4;
+}
+
+.msg-box {
+  margin: 20rpx 50rpx;
+  padding: 20rpx;
+  width: 650rpx;
+  height: 250rpx;
+  font-size: 24rpx;
+  color: #b4b4b4;
+  background-color: #f2f2f2;
+}
+
+.msg-content {
+  margin-top: 5rpx;
+}
+
+.card-pre {
+  margin: 20rpx 50rpx;
+  color: #b4b4b4;
+}
+
+.copy-wechat{
+  width:650rpx;
+  height:80rpx;
+  margin:20rpx 50rpx;
+  color:white;
+  background-color: #fc364f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

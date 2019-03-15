@@ -1,0 +1,33 @@
+<view class="container">
+  <text class='p_title'>欢迎来到王者派对！</text>
+  <text class='p_desc'>Let's play together~</text>
+  <text class='p_title'>请选择你的开黑目标:</text></view>
+<view class='main-choice'>
+  <view class="choice-box">
+    <view class="choice-img">
+      <image src='{{GodnessImg}}' class='GodnessImg'></image>
+    </view>
+    <button class="weui-btn" class='choice' bindtap='knowGodness'>结识女神</button>
+  </view>
+  <view class="choice-box">
+    <view class="choice-img">
+      <image src='{{rankUpImg}}' class='rankUpImg'></image>    
+    </view>
+    <button class="weui-btn" class='choice' bindtap='rankUp'>一起上分</button>
+  </view>
+  <view wx:if="{{getApp().globalData.userY}}" class='login_div'>
+  </view>
+   <!-- <button class="login_btn" wx:if="{{getApp().globalData.userY}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button> -->
+   <!-- 自定义弹框开始 -->
+  <view wx:if="{{showModel}}" class="model">
+    <view class="modelTitle">
+      获取微信授权信息
+    </view>
+    <view class="modelBody">微信登录需要获取您的用户信息，请前往设置</view>
+    <view class="btns">
+      <button open-type="getUserInfo" class="agree" bindgetuserinfo="agreeGetUser" lang="zh_CN">去设置</button>
+    </view>
+  </view>
+  <view wx:if="{{showModel}}" class="mask"></view>
+  <!-- 自定义弹框结束 -->
+</view>

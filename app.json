@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/heros/heros",
+    "pages/me/me",
+    "pages/shake/shake",
+    "pages/shakeResult/shakeResult",
+    "pages/allPages/allPages",
+    "pages/receiveMsg/receiveMsg",
+    "pages/copyPage/copyPage",
+    "pages/evaluate/evaluate",
+    "pages/editMyCard/editMyCard",
+    "pages/message/message"
+  ],
+  "components": [
+    "components/personCard/personCard"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fc364f",
+    "navigationBarTitleText": "王者派对",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#fc364f",
+    "backgroundColor": "white",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "images/icon_me.png",
+        "selectedIconPath": "images/icon_me-selected.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "摇一摇",
+        "iconPath": "images/icon_shake.png",
+        "selectedIconPath": "images/icon_shake-selected.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/icon_friend.png",
+        "selectedIconPath": "images/icon_friend-selected.png"
+      }
+    ]
+  }
+}

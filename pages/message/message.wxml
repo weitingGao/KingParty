@@ -1,0 +1,65 @@
+<!--message.wxml-->
+<view class='message-box'>
+  <view class='message_contain'>
+    <view class='mess_tip'>收到的消息列表</view>
+    <view>
+      <block wx:for="{{messAll}}" wx:key="" wx:for-index="idx">
+        <view class='{{mess_style[idx]}}' bindtap="goReceiveMsg" data-Index='{{idx}}'>
+          <view wx:if="{{item.type==2||item.type==5}}" class="mess_req">邀请</view>
+          <view wx:elif="{{item.type==1}}" class="mess_req">官方</view> 
+          <view wx:elif="{{item.type==3||item.type==4}}" class="mess_eval">评价</view>
+          <view class='mess_text'>{{item.title}}</view>
+          <view class='tomess_icon'><image style='width:30rpx; height:20rpx' src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/icon_allPages.png"></image></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- <modal class="drawer_box" hidden="{{modalHidden}}" bindconfirm="modalChange" bindcancel="modalChange" no-cancel='true'>
+  <view wx:if="{{item.mess_lable==='0'}}" class="">接收邀请</view>
+  <view wx:elif="{{item.mess_lable==='1'}}" class="">评价</view>
+  <view wx:else="{{item.mess_lable==='邀请'}}" class="">被评价</view>
+</modal> -->
+  <view class="modal-mask" bindtap="closeModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class='close_M' bindtap='closeModal'><image src="{{close_M}}" class='close-img'></image></view>
+    <!-- 评价好友 css样式统一加eval前缀-->
+    <view wx:if="{{Modaltype==='3'}}">
+      <view class='eval_contain'>
+        <view class='modal_title'>请对你的开黑小伙伴进行评价</view>
+        <view class='eval_avatar'>
+          <image wx:if="{{friendInfo.avatar!==null}}" src="{{friendInfo.avatar}}" class='avatar-img'></image>
+          <image wx:if="{{friendInfo.avatar ==null}}" src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/avatar.jpg" class='avatar-img'></image>   
+        </view>
+        <view class='eval_nickname'>{{friendInfo.name}}</view>
+        <view class='eval_nickname'>{{friendInfo.lv_name}}</view>
+        <view class='eval_time'>{{knowtime}}相识并开黑</view>
+      </view>
+      <button class='eval_start' bindtap='toEvaluate'>开始评价</button>
+      <button class='eval_fail' bindtap='goMain'>未成功开黑</button>
+    </view>
+    <!-- 接收邀请 css样式统一加invit前缀 -->
+    <view wx:elif="{{Modaltype==='5'}}">
+      <view class='modal_title'>{{friendInfo.name}}接受了你的开黑邀请</view>
+      <view class='inivt_copy' bindtap='goMain'>复制微信号一起开黑吧</view>
+      <personCard></personCard>
+    </view>
+    <!-- 收到评价 css样式统一加rece前缀-->
+    <view wx:elif="{{Modaltype==='4'}}">
+      <view class='modal_title'>收到来自{{friendInfo.name}}的评价</view>
+      <view class='rece_good' wx:if="{{good=='1'}}">
+        <image style="width:80rpx; height:80rpx;" src='http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/icon_heart-like.png'></image>
+        <view>他觉得你很棒哦~</view>
+      </view>
+      <view class='rece_eval'>
+        <block wx:for="{{eval_word}}"  wx:key="">
+          <view class="rece_word">{{item}}</view>
+        </block>
+      </view>
+      <button class='rece_toeval' bindtap='toEvaluate'>对他进行评价</button>
+    </view>
+  </view>
+  <!-- 官方消息 -->
+  <view wx:elif="{{Modaltype==='1'}}">
+    官方消息
+  </view>
+</view>

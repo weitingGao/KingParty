@@ -1,0 +1,62 @@
+.heros-box{
+  width: 100%;
+  margin: 0 auto;
+}
+.heros_title{
+  font-size:24rpx;
+  color:#909090;
+  margin:20rpx 20rpx;
+}
+.hero_list{
+  width: 100%;
+  margin-bottom: 10rpx;
+  margin-left: 25rpx;
+  /* display:block; */
+}
+.f_hero_job{
+  display: block;
+  float: left;
+  width: 115rpx;
+  height: 115rpx;
+  border: 1rpx solid #d0d0d0;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 105rpx;
+}
+.t_hero_job{
+  display: block;
+  float: left;
+  background: #ADADAD;
+  width: 115rpx;
+  height: 115rpx;
+  border: 1rpx solid #d0d0d0;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 105rpx;
+  color: #FFFFFF;
+}
+.allhero{
+  width: 100%;
+  /* padding: 15rpx;  */
+  float: left;
+}
+.hero{
+  display: block;
+  width: 123rpx;
+  float: left;
+  height: 147rpx;
+  margin: 10rpx;
+  padding: 10rpx 15rpx;
+}
+.hero_img{
+  width: 123rpx;
+  height: 123rpx;
+  /* border: 1rpx solid;  */
+}
+.hero_name{
+  margin-bottom: 15rpx;
+  font-size: 24rpx;
+   /* border: 1rpx solid;  */
+  text-align: center;
+  width: 123rpx;
+}

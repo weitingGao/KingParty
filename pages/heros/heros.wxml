@@ -1,0 +1,44 @@
+<view class="heros-box">
+  <view class='heros_title'>最擅长英雄</view>
+  <view class='hero_list' wx:for="{{hero_job}}" wx:key='' wx:for-index="idx">
+    <view class="{{item.list_check?'t_hero_job':'f_hero_job'}}" bindtap='choosehero' data-Index='{{idx}}' data-This='{{item.name}}'>{{item.name}}</view>
+  </view>
+  <view class='allhero'>
+    <view wx:if="{{hero_id==1}}">
+      <view class='hero' wx:for='{{allheros[1].hero}}' wx:key='' wx:for-index="idx">
+         <view class='hero_img'  data-Index='{{idx}}' bindtap='selcehero'><image style='width:123rpx; height:123rpx;' src="{{item.logo}}"></image></view> 
+        <view class='hero_name'>{{item.name}}</view>
+      </view>
+    </view>
+    <view wx:if="{{hero_id==0}}">
+      <view class='hero' wx:for='{{allheros[0].hero}}'  wx:key='' wx:for-index="idx" >
+        <view class='hero_img'  data-Index='{{idx}}' bindtap='selcehero'><image style='width:123rpx; height:123rpx;' src="{{item.logo}}"></image></view>
+        <view class='hero_name'>{{item.name}}</view>
+      </view>
+    </view>
+    <view wx:if="{{hero_id==3}}">
+      <view class='hero' wx:for='{{allheros[3].hero}}'  wx:key='' wx:for-index="idx">
+       <view class='hero_img'  data-Index='{{idx}}' bindtap='selcehero'><image style='width:123rpx; height:123rpx;' src="{{item.logo}}"></image></view>
+       <view class='hero_name'>{{item.name}}</view>
+      </view>
+    </view>
+    <view wx:if="{{hero_id==2}}">
+      <view class='hero' wx:for='{{allheros[2].hero}}'  wx:key='' wx:for-index="idx">
+        <view class='hero_img'  data-Index='{{idx}}' bindtap='selcehero'><image style='width:123rpx; height:123rpx;' src="{{item.logo}}"></image></view>
+        <view class='hero_name'>{{item.name}}</view>
+      </view>
+    </view>
+    <view wx:if="{{hero_id==4}}">
+      <view class='hero' wx:for='{{allheros[4].hero}}'  wx:key='' wx:for-index="idx">
+       <view class='hero_img'  data-Index='{{idx}}' bindtap='selcehero'><image style='width:123rpx; height:123rpx;' src="{{item.logo}}"></image></view>
+        <view class='hero_name'>{{item.name}}</view>
+      </view>
+    </view>
+    <view wx:if="{{hero_id==5}}">
+      <view class='hero' wx:for='{{allheros[5].hero}}'  wx:key='' wx:for-index="idx">
+       <view class='hero_img'  data-Index='{{idx}}' bindtap='selcehero'><image style='width:123rpx; height:123rpx;' src="{{item.logo}}"></image></view>
+        <view class='hero_name'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

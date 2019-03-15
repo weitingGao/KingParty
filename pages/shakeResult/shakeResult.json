@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "personCard":"../../components/personCard/personCard"
+  }
+}

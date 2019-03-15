@@ -1,0 +1,91 @@
+<!--pages/shakeResult/shakeResult.wxml-->
+<view class='match-word'>匹配王者</view>
+<view class='match-tip'>点击英雄卡，和他一起开黑吧!</view>
+<view class='allBox'>
+  <view class='person-card' wx:for="{{personCard}}" wx:for-index="idx" wx:key="id">
+     <view bindtap="modalTap" data-index="{{idx}}"> 
+      <!-- <personCard></personCard>  -->
+      <!-- 英雄卡内容 -->
+      <view class='personCard-box'>
+        <view class='personCard-top'>
+          <view class='top-content'>
+            <view class='avatar'>
+              <image wx:if="{{item.avatar!==null}}" src="{{item.avatar}}" class='avatar-img'></image>
+              <image wx:if="{{item.avatar ==null}}" src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/avatar.jpg" class='avatar-img'></image>
+            </view>
+            <view class='person-intr'>
+              <view class='nickname'>
+                <view>{{item.name}}</view>
+                <view wx:if="{{item.sex==1}}">
+                  <image src='{{male}}' class='sex-img'></image>
+                </view>
+                <view wx:if="{{item.sex==2}}">
+                <image src='{{female}}' class='sex-img'></image>
+                </view>
+              </view>
+              <view class='level-position'>
+                <view class='level'>{{item.lv_name}}</view>
+                <view class='position'>{{item.place}}</view>
+              </view> 
+                <view class='voice-intr' catchtap='videoPlay' style="background:url(http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/yuyintiao.png)no-repeat; background-size:100% 100%;"></view><view class='voice_length'>{{item.voice.length}}</view>
+            </view>
+              <view class='personCard-right'>
+                <view class='personIntr-length' catchtap=''>
+                  附近的人距离{{length[idx]}}米
+                </view>
+                <view class="personIntr-heart">
+                  <image src='{{heart}}' class='heart-img'></image>
+                  <view>{{item.good}}</view>
+                </view>
+              </view>
+              
+          </view>
+        </view>
+        <view class='personCard-bottom'>
+          <view wx:if='{{item.hero_photo==null}}' class='heroImg-box' style="background:url(http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/moren_tu.jpeg) no-repeat; background-size:100% 100%;">
+            <view class='left-label'>
+                 <block wx:for="{{item.label}}" wx:key="id"  wx:for-item="item2">
+                  <view class='hero-label'>暂无</view>
+                </block> 
+            </view>
+              <view class='right-img'>
+                <text>暂无</text>
+              </view> 
+          </view>
+
+            <view wx:if='{{item.hero_photo!==null}}' class='heroImg-box' style="background:url({{item.hero_photo}}) no-repeat; background-size:100% 100%;">  
+           <view class='left-label'>
+                 <block wx:for="{{item.label}}" wx:key="id"  wx:for-item="item2">
+                  <view class='hero-label'>{{item2}}</view>
+                </block> 
+            </view>
+              <view class='right-img'>
+                <text>{{item.hero_name}}</text>
+              </view> 
+          </view> 
+
+
+        </view>
+      </view>
+    </view>
+   </view> 
+</view>
+ <view class='shake-again' bindtap="shake_again">再摇一次</view> 
+ <!-- <navigator class='shake-again' url='../shake/shake'>再摇一次</navigator> -->
+<modal class="drawer_box" hidden="{{modalHidden}}" confirm-text="发送" cancel-text="关闭" bindconfirm="modalsubmit" bindcancel="modalChange">
+  <view class='text-block'>
+    <text class='to-someone'>To {{to_someone}}:</text>    
+    <view class='textarea'>
+      <textarea bindinput="checkLen" maxlength='150' value='{{textareaValue}}'></textarea>
+      <view class='remain-words'>还可输入{{remainWords}}字</view>
+    </view>
+  </view>
+  <view class='more-words-box'>
+    <view class='more-words'>更多趣味打招呼：</view>
+    <block wx:for="{{more_words_content}}" wx:key=''>
+      <view catchtap='addtext' data-index="{{item}}" class='more-words-content'>{{item}}</view>
+    </block>
+  </view>
+</modal>
+ 
+

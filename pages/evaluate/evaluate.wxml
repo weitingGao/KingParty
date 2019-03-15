@@ -1,0 +1,55 @@
+<!--pages/evaluate/evaluate.wxml-->
+<!-- 未评价 -->
+<view class='evaluate-box'wx:if="{{isEvaluate==false}}" >
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view> 
+  <view class='eval_title'>评价你的开黑小伙伴{{friendName}}</view>
+  <view class='eval_top'>
+    <view class='eval_topleft'>
+      <view class='avatar'>
+        <image src="{{avatar}}" class='avatar-img'></image>
+      </view>
+      <view class='eval_nickname'>{{nickname}}</view>
+      <view class='eval_nickname'>{{level}}</view>
+    </view>
+    <view class='eval_topright' catchtap='tolike'>
+      <image style="width:120rpx; height:120rpx;" src='{{heart}}'></image>
+      <view>喜欢请点赞哦~</view>
+    </view>
+  </view> 
+  
+  <view class='eval_bottom'>
+    <view class='edit_lab'>趣味标签：</view>
+    <input class='costom_lab' type="text" bindinput ="labInput" placeholder='自定义标签'>{{costom_lab}}</input>
+    <button class="btn_lab" bindtap="addLab">添加</button>
+  </view>
+  <view class='more_label'>
+    <block wx:for="{{heroLabel}}" wx:for-index="idx" wx:key="">
+      <view class="{{item.is_select?'t_hero_label':'f_hero_label'}}" data-what='{{idx}}' bindtap="select_lab">{{item.name}}</view>
+    </block>
+  </view>
+   <button class='toEdit' bindtap='submit_eval'>提交评论</button>
+</view>
+<!-- 已评价 -->
+<view class='evaluate-box'wx:if="{{isEvaluate==true}}" >
+  <view class='eval_title'>已经评价你的开黑小伙伴{{friendName}}</view>
+    <view class='eval_top'>
+      <view class='eval_topleft'>
+        <view class='avatar'>
+          <image src="{{avatar}}" class='avatar-img'></image>
+        </view>
+        <view class='eval_nickname'>{{nickname}}</view>
+        <view class='eval_nickname'>{{level}}</view>
+      </view>
+      <view class='eval_topright'>
+        <image wx:if="{{isLike==0}}" style="width:120rpx; height:120rpx;" src='{{heart}}'></image>
+        <image wx:if="{{isLike==1}}" style="width:120rpx; height:120rpx;" src='{{heart_like}}'></image>
+        <view wx:if="{{isLike==0}}">你没有为他点赞~</view><view wx:if="{{isLike==1}}">你已为他点赞~</view>
+      </view>
+    </view> 
+    <view class='edit_lab'>以下是你对他的评价</view>    
+    <view class='more_label'>
+      <block wx:for="{{eva_label}}" wx:for-index="idx" wx:key="">
+        <view class="t_hero_label" data-what='{{idx}}'>{{item}}</view>
+      </block>
+    </view>
+</view>

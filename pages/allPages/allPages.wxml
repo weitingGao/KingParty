@@ -1,0 +1,5 @@
+<!--pages/allPages/allPages.wxml-->
+<navigator url='../shake/shake'>shake</navigator>
+<navigator url='../shakeResult/shakeResult' bindtap='changeCardRight'>shakeResult</navigator>
+<navigator url='../receiveMsg/receiveMsg' bindtap='noRight'>receiveMsg</navigator>
+<navigator url='../copyPage/copyPage' bindtap='wechat'>copyPage</navigator>

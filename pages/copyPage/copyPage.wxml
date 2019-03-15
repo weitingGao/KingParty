@@ -1,0 +1,15 @@
+<!--pages/copyPage/copyPage.wxml-->
+<view class='receive-title'>收到来自“{{acceptFrom}}”的邀请函</view>
+<view class='msg-box'>
+  <view>from {{acceptFrom}}：</view>
+  <view msg-content>
+    妹子，哥哥带你飞啊~
+  </view>
+</view>
+<view class='msg-source'>
+  <view class='card-pre'>来认识一下“{{acceptFrom}}”</view>
+  <view class='receive-card'>
+    <personCard></personCard>
+  </view>
+  <view class='copy-wechat' bindtap='goMain' open-type='switchTab'>复制微信号，一起开黑吧</view>
+</view>

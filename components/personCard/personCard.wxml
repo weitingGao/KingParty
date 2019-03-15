@@ -1,0 +1,73 @@
+<!--components/personCard/personCard.wxml-->
+<view class='personCard-box'>
+  <view class='personCard-top'>
+    <view class='top-content'>
+      <view class='avatar'>
+        <image wx:if="{{personIntr.avatar!==null}}" src="{{personIntr.avatar}}" class='avatar-img'></image>
+        <image wx:if="{{personIntr.avatar ==null}}" src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/avatar.jpg" class='avatar-img'></image>
+      </view>
+      <view class='person-intr'>
+        <view class='nickname'>
+          <view>{{personIntr.name}}</view>
+          <view wx:if="{{personIntr.sex==1}}">
+            <image src='{{male}}' class='sex-img'></image>
+          </view>
+          <view wx:if="{{personIntr.sex==2}}">
+           <image src='{{female}}' class='sex-img'></image>
+          </view>
+        </view>
+        <view class='level-position'>
+          <view class='level'>{{personIntr.lv_name}}</view>
+          <view class='position'>{{personIntr.place}}</view>
+        </view> 
+          <view class='voice-intr' catchtap='videoPlay' style="background:url(http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/yuyintiao.png)no-repeat; background-size:100% 100%;"></view><view class='voice_length'>3{{personIntr.voice.length}}</view>
+      </view>
+        <view class='personCard-right' wx:if="{{personCardRight==='like'}}">
+          <view class='personIntr-length' catchtap=''>
+            距离{{personIntr.length}}米
+          </view>
+          <view class="personIntr-heart">
+            <image src='{{heart}}' class='heart-img'></image>
+            <view>{{personIntr.good}}</view>
+          </view>
+        </view>
+        <view class='personCard-right' wx:elif="{{personCardRight==='noRight'}}"></view>
+        <view class='personCard-right' wx:elif="{{personCardRight==='wechat'}}">
+          <view class='wechat-box'>
+            <view class='wechatNum'>{{personIntr.wechat}}</view>
+          </view>
+        </view>
+        <view class='personCard-right' wx:elif="{{personCardRight==='editMyCard'}}">
+          <view class='edit-box' catchtap='edit'>
+            <image class='editMyCard' src='{{editMyCard}}'></image>
+          </view>
+        </view>
+        <view class='personCard-right' wx:else="{{personCardRight==='comment'}}">
+        
+        </view>
+    </view>
+  </view>
+  <view class='personCard-bottom'>
+    <view wx:if='{{personIntr.hero_photo==null}}' class='heroImg-box' style="background:url(http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/moren_tu.jpeg) no-repeat; background-size:100% 100%;">
+      <view class='left-label'>
+            <block wx:for="{{personIntr.label}}" wx:key="id"  wx:for-item="item2">
+            <view class='hero-label'>暂无</view>
+          </block> 
+      </view>
+        <view class='right-img'>
+          <text>暂无</text>
+        </view> 
+    </view>
+
+    <view wx:if='{{personIntr.hero_photo!==null}}' class='heroImg-box' style="background:url({{personIntr.hero_photo}})no-repeat; background-size:100% 100%;">
+       <view class='left-label'>
+          <block wx:for="{{personIntr.label}}" wx:key="">
+            <view class='hero-label'>{{item}}</view>
+          </block>
+      </view>
+        <view class='right-img'>
+          <text>{{personIntr.hero_name}}</text>
+        </view> 
+    </view>
+  </view>
+</view>

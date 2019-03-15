@@ -1,0 +1,205 @@
+/* pages/shakeResult/shakeResult.wxss */
+.match-word{
+  margin:20rpx 50rpx;
+}
+.match-tip{
+  margin:10rpx 50rpx;
+  font-size: 20rpx;
+  color: #9D9D9D;
+}
+ .allBox{
+  margin-bottom:100rpx;
+} 
+.shake-again{
+  width:100%;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color:white;
+  background-color: #fc364f;
+  font-size: 40rpx;
+  border-radius: 0;
+  position: fixed;
+  bottom:0;
+}
+
+.text-block{
+  position: relative;
+  color:#000;
+  /* color:#d1d1d1; */
+}
+
+.textarea{
+  margin-top:10rpx;
+}
+
+.textarea textarea{
+  width:550rpx;
+  height:250rpx;
+  box-sizing: border-box;
+  padding:10rpx;
+  /* color:#8d8d8d; */
+  color:#000;
+  font-size: 30rpx;
+  border:1rpx solid #dedede;
+}
+
+.remain-words{
+  color:#d1d1d1;
+  font-size: 24rpx;
+  margin-right: 20rpx;
+  float: right;
+}
+
+.more-words{
+  margin-top:20rpx;
+  position: relative;
+  color:#000;
+  font-size: 16rpx;
+  font-weight: lighter;
+}
+
+.more-words-content{
+  margin:20rpx 20rpx 20rpx 0;
+  padding:5rpx 40rpx;
+  display: inline-block;
+   color:#000;
+  font-size: 24rpx;
+  font-weight: lighter;
+  border: 1rpx solid #d1d1d1;
+  border-radius: 50rpx;
+}
+
+
+/* 英雄卡样式 */
+.personCard-box{
+  width:650rpx;
+  height:500rpx;
+  margin:20rpx auto;
+  border:1rpx solid #dfdfdf;
+  font-size: 24rpx;
+}
+
+.top-content{
+  width:100%;
+  height:200rpx;
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+}
+
+.avatar{
+  width:120rpx;
+  height:120rpx;
+  margin:0 15rpx;
+}
+
+.avatar-img{
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+}
+
+.person-intr{
+  width:255rpx;
+  height:150rpx;
+  padding:0 10rpx;
+  /* border: 1rpx solid black */
+}
+
+.nickname{
+  font-size: 24rpx;
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.sex-img{
+  width:30rpx;
+  height:30rpx;
+  margin-left: 10rpx;
+}
+
+.level-position{
+  color:#727272;
+  font-size: 24rpx;
+  display: flex;
+  flex-wrap:wrap;
+  margin-bottom: 10rpx;
+}
+
+.position{
+  margin-left: 80rpx;
+}
+.voice-intr{
+  width:160rpx;
+  height:50rpx;
+  float: left;
+}
+.voice_length{
+  float: left;
+  margin-left: 20rpx;
+  line-height: 60rpx;
+}
+
+/* 摇一摇结果页卡片右侧 */
+
+.personIntr-length{
+  display: inline-block;
+  margin-left:80rpx;
+  color:white;
+  font-size: 15rpx;
+  padding:5rpx 20rpx;
+  background-color: #666666;
+  border-radius:25rpx;
+}
+
+.personIntr-heart{
+  width:100rpx;
+  height:80rpx;
+  margin-top: 20rpx;
+  margin-left: 106rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+   /* border:1rpx solid black;  */
+}
+
+.heart-img{
+  width:50rpx;
+  height:50rpx;
+}
+
+
+/* 英雄卡样式 */
+.heroImg-box{
+  width:646rpx;
+  height:296rpx;
+  display: flex;
+  flex-wrap:wrap; 
+  color:white;
+  background-color: #666666;
+  
+   /* border: 6rpx #111b25;  */
+}
+
+.left-label{
+  width: 350rpx;
+  height:296rpx;
+}
+.hero-label{
+  font-size: 24rpx;
+  display: inline-block;
+  margin:10rpx;
+  padding:5rpx 20rpx;
+  border:1rpx solid white;
+  border-radius:50rpx;
+}
+
+.right-img{
+   /* width:296rpx;
+  height:296rpx; */
+  float: right;
+  margin-left:195rpx;
+}

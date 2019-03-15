@@ -1,0 +1,76 @@
+<!--pages/me/me.wxml-->
+<view class='page_title'>我的王者名片</view>
+<!-- 个人英雄卡 -->
+<!-- <personCard></personCard> -->
+<view class='personCard-box'>
+  <view class='personCard-top'>
+    <view class='top-content'>
+      <view class='avatar'>
+      <image wx:if="{{personIntr.avatar ==null}}" src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/avatar.jpg" class='avatar-img'></image>
+        <image wx:if="{{personIntr.avatar !==null}}" src="{{personIntr.avatar}}" class='avatar-img'></image>
+        
+      </view>
+      <view class='person-intr'>
+        <view class='nickname'>
+          <view>{{personIntr.name}}</view>
+          <view wx:if="{{personIntr.sex==1}}">
+            <image src='{{male}}' class='sex-img'></image>
+          </view>
+          <view wx:if="{{personIntr.sex==2}}">
+           <image src='{{female}}' class='sex-img'></image>
+          </view>
+        </view>
+        <view class='level-position'>
+          <view class='level'>{{personIntr.lv_name}}</view>
+          <view class='position'>{{personIntr.place}}</view>
+        </view> 
+          <view class='voice-intr' catchtap='videoPlay' style="background:url(http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/yuyintiao.png)no-repeat; background-size:100% 100%;"></view><view class='voice_length'>{{personIntr.voice.length}}</view>
+      </view>
+      
+        <view class='personCard-right'>
+          <view class='edit-box' catchtap='edit'>
+            <image class='editMyCard' src='{{editMyCard}}'></image>
+          </view>
+        </view>
+    </view>
+  </view>
+  <view class='personCard-bottom'>
+    <view wx:if='{{personIntr.hero_photo==null}}' class='heroImg-box' style="background:url(http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/moren_tu.jpeg) no-repeat; background-size:100% 100%;">
+      <view class='left-label'>
+            <block wx:for="{{personIntr.label}}" wx:key="id"  wx:for-item="item2">
+            <view class='hero-label'>暂无</view>
+          </block> 
+      </view>
+        <view class='right-img'>
+          <text>暂无</text>
+        </view> 
+    </view>
+
+    <view wx:if='{{personIntr.hero_photo!==null}}' class='heroImg-box' style="background:url({{personIntr.hero_photo}})no-repeat; background-size:100% 100%;">
+       <view class='left-label'>
+          <block wx:for="{{personIntr.label}}" wx:key="">
+            <view class='hero-label'>{{item}}</view>
+          </block>
+      </view>
+        <view class='right-img'>
+          <text>{{personIntr.hero_name}}</text>
+        </view> 
+    </view>
+  </view>
+</view>
+
+
+<view class="me-bottom">
+  <view class='like-count'>
+    <view>收到的评价：</view>
+    <view class="people_like">
+      <image src='{{heart}}' class='heart_img'></image>
+      <view class='like_title'>共收到{{personIntr.good}}个点赞</view>
+    </view>
+    <view>
+      <block wx:for="{{heroLabel}}" wx:key="">
+        <view class='like_text'>{{item}}</view>
+      </block>
+    </view>
+  </view>
+</view>

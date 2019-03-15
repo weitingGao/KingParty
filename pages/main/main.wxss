@@ -1,0 +1,65 @@
+@import "../comm/comm.wxss";
+
+.main-choice{
+  margin: 0 auto;
+  text-align: center;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.choice-box{
+  margin:20rpx;
+}
+
+.choice-img{
+  width: 300rpx;
+  height:300rpx;
+}
+
+.GodnessImg,.rankUpImg{
+  width:300rpx;
+  height:300rpx;
+}
+
+.choice{
+  width:100%;
+  margin-top:20rpx;
+  color:white;
+  font-size:32rpx;
+  background-color: #fc364f;
+}
+.login_div{
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  background: #666;
+}
+.login_btn{
+  background: #fc364f;
+  color: #fff;
+  width: 300rpx;
+}
+.model{
+  width:80%;
+  height:42%;
+  position:absolute;
+  background:#fc264f;
+  top:30%;
+  left:10%;
+}
+.model .btns{
+  width: 300rpx;
+  height: 150rpx;
+  position:absolute;
+  bottom: 10%;
+  left:20%;
+}
+.modelTitle{
+  width: 100%;
+  font-size: 30rpx;
+  color: #fff;
+  margin-top: 10%;
+}

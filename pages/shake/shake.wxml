@@ -1,0 +1,22 @@
+<view class="shake-main">
+    <view class="container">
+        <text class="p_title" wx:if="{{flag}}">摇一摇邂逅女神</text>
+        <text class="p_title" wx:else="{{flag}}">摇一摇偶遇老司机</text>
+        <view class="shake-box">
+            <image  src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/icon_shake-white.png" class="shake-img"></image>        
+        </view>
+        <view class="shake-choice">
+            <view class="choice choice-sex" bindtap="selectGodness">
+                <image src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/icon_sex-selected.png" class="choice-img" wx:if="{{flag}}"></image>
+                <image src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/icon_sex.png" class="choice-img" wx:else="{{flag}}"></image>
+                <view class="choice-desc">邂逅女神</view>
+            </view>
+            <view class="choice choice-driver" bindtap="selectDriver">
+                <image src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/icon_driver.png" class="choice-img" wx:if="{{flag}}"></image>
+                <image src="http://img.intech.gdinsight.com/tencent/kingparty/a20180423/images/icon_driver-selected.png" class="choice-img" wx:else="{{flag}}"></image>
+                <view class="choice-desc">偶遇老司机</view>
+            </view>
+        </view>
+           <button bindtap="goMatching">摇到结果</button>  
+    </view>
+</view>
